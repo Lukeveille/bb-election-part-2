@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function() {
       
       let button = document.createElement('button');
       button.innerText = 'Vote!';
-      button.type = 'hidden'
-      button.name = 'name'
-      button.value = candidate.name
+      button.type = 'hidden';
+      button.name = 'name';
+      button.value = candidate.name;
       
       form.appendChild(button);
       li.appendChild(form);
@@ -52,15 +52,13 @@ document.addEventListener("DOMContentLoaded", function() {
           nameList[i].innerHTML = candidate.name + ': ' + candidate.votes + ' votes';
           nameList[i].append(button);
         });
-  
       });
     }).catch(() => {
       console.log('uh oh, something went wrong :/');
     });
   });
 
-  refresh.addEventListener('click', function(e) {
-    // e.preventDefault();
+  refresh.addEventListener('click', function() {
     nameList.forEach(function(list) {
       list.lastChild.lastChild.disabled = false;
     });
